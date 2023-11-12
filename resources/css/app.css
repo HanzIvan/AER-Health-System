@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[readonly], input[disabled], select[disabled] {
+        @apply cursor-default text-disabled-text bg-disabled-bg;
+    }
+
+    .nav-link {
+        @apply relative text-lg whitespace-nowrap hover:border-b-2 hover:pb-1 hover:border-secondary hover:text-secondary;
+    }
+
+    .nav-link::after {
+        @apply -bottom-2 left-0 min-h-[2px] min-w-[100%] bg-white absolute;
+    }
+
+    .form-input {
+        @apply rounded-xl border w-full border-gray-300 col-span-3
+        focus:ring-0;
+    }
+
+    .patient-form-input {
+        @apply rounded-lg border border-gray-300 py-0;
+    }
+
+    ::-ms-reveal {
+        display: none;
+    }
+}
